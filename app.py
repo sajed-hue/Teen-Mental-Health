@@ -125,6 +125,7 @@ st.title("Teen Mental Health Prediction System")
 st.write(
     "This app uses your trained Keras neural network model to predict depression risk. "
     "Educational use only — not a medical diagnosis."
+    "Developed by Sajed Kittanh and Thimar Arda."
 )
 
 st.warning(
