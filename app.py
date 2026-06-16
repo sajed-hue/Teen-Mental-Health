@@ -125,7 +125,6 @@ st.title("Teen Mental Health Prediction System")
 st.write(
     "This app uses your trained Keras neural network model to predict depression risk. "
     "Educational use only — not a medical diagnosis."
-    "Developed by Sajed Kittanh and Thimar Arda."
 )
 
 st.warning(
@@ -265,3 +264,111 @@ if submitted:
         st.write("Number of features:", len(feature_columns))
         st.write("Feature columns:")
         st.write(feature_columns)
+st.markdown(
+    """
+<style>
+.custom-footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(14, 17, 23, 0.96);
+    backdrop-filter: blur(10px);
+    color: #FAFAFA;
+    padding: 12px 16px;
+    z-index: 9999;
+    border-top: 1px solid rgba(10, 102, 194, 0.35);
+    box-shadow: 0 -4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    font-size: 14px;
+}
+
+.footer-label {
+    color: #B8C1CC;
+    font-weight: 500;
+}
+
+.footer-author {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    font-weight: 700;
+    transition: all 0.25s ease;
+}
+
+.footer-author:hover {
+    background: rgba(10, 102, 194, 0.18);
+    border-color: rgba(10, 102, 194, 0.65);
+    transform: translateY(-1px);
+}
+
+.linkedin-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    background: #0A66C2;
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    font-family: Arial, sans-serif;
+    line-height: 1;
+}
+
+.footer-separator {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.block-container {
+    padding-bottom: 90px;
+}
+
+@media (max-width: 600px) {
+    .footer-content {
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .footer-separator {
+        display: none;
+    }
+
+    .footer-author {
+        padding: 5px 10px;
+    }
+}
+</style>
+<div class="custom-footer">
+    <div class="footer-content">
+        <span class="footer-label">Developed by</span>
+        <a class="footer-author" href="https://www.linkedin.com/in/sajed-kittanh/" target="_blank">
+            <span>Sajed Kittanh</span>
+            <span class="linkedin-badge">in</span>
+        </a>
+        <span class="footer-separator"></span>
+        <a class="footer-author" href="https://www.linkedin.com/in/thimar-arda-02bb87347/" target="_blank">
+            <span>Thimar Arda</span>
+            <span class="linkedin-badge">in</span>
+        </a>
+    </div>
+</div>
+""",
+    unsafe_allow_html=True
+)
