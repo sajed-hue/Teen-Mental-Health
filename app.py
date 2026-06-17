@@ -177,7 +177,7 @@ with st.form("prediction_form"):
         academic_performance = st.slider(
             "Academic Performance",
             min_value=0.0,
-            max_value=5.0,
+            max_value=4.0,
             value=3.18,
             step=0.1
         )
