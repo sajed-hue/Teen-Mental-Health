@@ -138,19 +138,21 @@ with st.form("prediction_form"):
     col1, col2 = st.columns(2)
 
     with col1:
-        age = st.number_input(
+        age = st.slider(
             "Age",
             min_value=13,
             max_value=19,
-            value=16
+            value=16,
+            step=1
         )
 
-        gender = st.selectbox(
+        gender = st.select_slider(
             "Gender",
-            ["male", "female"]
+            options=["male", "female"],
+            value="male"
         )
 
-        daily_social_media_hours = st.number_input(
+        daily_social_media_hours = st.slider(
             "Daily Social Media Hours",
             min_value=0.0,
             max_value=24.0,
@@ -158,7 +160,7 @@ with st.form("prediction_form"):
             step=0.5
         )
 
-        sleep_hours = st.number_input(
+        sleep_hours = st.slider(
             "Sleep Hours",
             min_value=0.0,
             max_value=24.0,
@@ -166,7 +168,7 @@ with st.form("prediction_form"):
             step=0.5
         )
 
-        screen_time_before_sleep = st.number_input(
+        screen_time_before_sleep = st.slider(
             "Screen Time Before Sleep",
             min_value=0.0,
             max_value=12.0,
@@ -183,7 +185,7 @@ with st.form("prediction_form"):
         )
 
     with col2:
-        physical_activity = st.number_input(
+        physical_activity = st.slider(
             "Physical Activity",
             min_value=0.0,
             max_value=10.0,
@@ -195,35 +197,38 @@ with st.form("prediction_form"):
             "Stress Level",
             min_value=1,
             max_value=10,
-            value=10
+            value=10,
+            step=1
         )
 
         anxiety_level = st.slider(
             "Anxiety Level",
             min_value=1,
             max_value=10,
-            value=10
+            value=10,
+            step=1
         )
 
         addiction_level = st.slider(
             "Addiction Level",
             min_value=1,
             max_value=10,
-            value=10
+            value=10,
+            step=1
         )
 
-        platform_usage = st.selectbox(
+        platform_usage = st.select_slider(
             "Platform Usage",
-            ["both", "instagram", "tiktok"]
+            options=["both", "instagram", "tiktok"],
+            value="both"
         )
 
-        social_interaction_level = st.selectbox(
+        social_interaction_level = st.select_slider(
             "Social Interaction Level",
-            ["high", "medium", "low"]
+            options=["high", "medium", "low"],
+            value="high"
         )
 
-    # Fixed threshold value
-    # This is not shown in the Streamlit interface
     threshold = 0.5
 
     submitted = st.form_submit_button("Predict")
@@ -264,6 +269,8 @@ if submitted:
         st.write("Number of features:", len(feature_columns))
         st.write("Feature columns:")
         st.write(feature_columns)
+
+
 st.markdown(
     """
 <style>
@@ -331,7 +338,19 @@ st.markdown(
     padding-bottom: 150px;
 }
 </style>
-<div class="custom-footer"><div class="footer-content"><div class="footer-label">Developed by</div><a class="footer-author" href="https://www.linkedin.com/in/sajed-kittanh/" target="_blank"><span>Sajed Kittanh</span><span class="linkedin-badge">in</span></a><a class="footer-author" href="https://www.linkedin.com/in/thimar-arda-02bb87347/" target="_blank"><span>Thimar Arda</span><span class="linkedin-badge">in</span></a></div></div>
+<div class="custom-footer">
+    <div class="footer-content">
+        <div class="footer-label">Developed by</div>
+        <a class="footer-author" href="https://www.linkedin.com/in/sajed-kittanh/" target="_blank">
+            <span>Sajed Kittanh</span>
+            <span class="linkedin-badge">in</span>
+        </a>
+        <a class="footer-author" href="https://www.linkedin.com/in/thimar-arda-02bb87347/" target="_blank">
+            <span>Thimar Arda</span>
+            <span class="linkedin-badge">in</span>
+        </a>
+    </div>
+</div>
 """,
     unsafe_allow_html=True
 )
